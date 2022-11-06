@@ -1,0 +1,5 @@
+D:\Anthracide go\AnthracideUI.exe
+D:\Anthracide go\AnthracideUI.dll
+D:\Anthracide go\AnthracideUI.deps.json
+D:\Anthracide go\AnthracideUI.runtimeconfig.json
+D:\Anthracide go\AnthracideUI.pdb

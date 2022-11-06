@@ -1,0 +1,5 @@
+\\StollNAS\Projekte\Projekte 2022\Anthracide go\AnthracideUI.exe
+\\StollNAS\Projekte\Projekte 2022\Anthracide go\AnthracideUI.dll
+\\StollNAS\Projekte\Projekte 2022\Anthracide go\AnthracideUI.deps.json
+\\StollNAS\Projekte\Projekte 2022\Anthracide go\AnthracideUI.runtimeconfig.json
+\\StollNAS\Projekte\Projekte 2022\Anthracide go\AnthracideUI.pdb

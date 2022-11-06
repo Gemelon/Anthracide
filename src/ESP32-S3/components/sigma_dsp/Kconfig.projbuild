@@ -1,0 +1,13 @@
+menu "Anthracide SigmaDSP Configuration"
+    config SIGMA_DSP_RESET_PIN
+        int "Number of SigmaDSP reset pin"
+        default 6
+        help
+            The number of the SigmaDSP reset pin
+
+    config SIGMA_DSP_I2C_ADDRESS
+        int "I2C Address"
+        default 104
+        help
+            I2C address of the SigmaDSP
+endmenu    
