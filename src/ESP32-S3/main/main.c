@@ -1,47 +1,57 @@
 #include <stdio.h>
-#include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "driver/gpio.h"
 #include "esp_log.h"
-#include "esp_event.h"
-#include "anthracide_led.h"
-#include "anthracide_i2c.h"
-#include "sigma_dsp.h"
-#include "SigmaDSP_parameters.h"
-#include "udp_server.h"
-#include "ir_nec_decoder.h"
-#include "nextion_display.h"
-#include "data_store.h"
+#include "led_strip.h"
 
-static const char *TAG = "ANTHRACIDE";
+static const char *TAG = "Anthracide";
 
-void initialize_component()
+static uint8_t s_led_state = 0;
+static led_strip_handle_t led_strip;
+
+static void blink_led(void)
 {
-    ESP_LOGI(TAG, "Initializes components");
-    data_store_initialize();
-    led_intialize();
-    i2c_initialize();
-    sigma_dsp_initialize();
-    nextion_display_initialize();
-    udp_server_initialize();
+    /* If the addressable LED is enabled */
+    if (s_led_state) {
+        /* Set the LED pixel using RGB from 0 (0%) to 255 (100%) for each color */
+        led_strip_set_pixel(led_strip, 0, CONFIG_BLINK_COLOR_RED, CONFIG_BLINK_COLOR_GREEN, CONFIG_BLINK_COLOR_BLUE);
+        /* Refresh the strip to send data */
+        led_strip_refresh(led_strip);
+    } else {
+        /* Set all LED off to clear all pixels */
+        led_strip_clear(led_strip);
+    }
 }
 
-void start_tasks()
+static void configure_led(void)
 {
-    ESP_LOGI(TAG, "Starting tasks");
-    data_store_start();
-    ir_nec_decoder_start();
-    nextion_display_start();
-    udp_server_start();
+    ESP_LOGI(TAG, "Example configured to blink addressable LED!");
+    /* LED strip initialization with the GPIO and pixels number*/
+    led_strip_config_t strip_config = {
+        .strip_gpio_num = CONFIG_BLINK_GPIO,
+        .max_leds = 1, // at least one LED on board
+    };
+    led_strip_rmt_config_t rmt_config = {
+        .resolution_hz = 10 * 1000 * 1000, // 10MHz
+    };
+    ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
+    /* Set all LED off to clear all pixels */
+    led_strip_clear(led_strip);
 }
+
+
 
 void app_main(void)
 {
-    // Create the default event loop
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    /* Configure the peripheral according to the LED type */
+    configure_led();
 
-    initialize_component();
-    volume_slew(MOD_MAINVOLUME_ALG0_TARGET_ADDR, MIN_dB, 12);
-    start_tasks();
-    // nextion_display_send_command("get t0.txt");
+    while (1) {
+        ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
+        blink_led();
+        /* Toggle the LED state */
+        s_led_state = !s_led_state;
+        vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+    }
 }

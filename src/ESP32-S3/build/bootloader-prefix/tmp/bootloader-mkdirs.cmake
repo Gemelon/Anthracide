@@ -5,15 +5,18 @@ cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
   "C:/Users/mailm/esp/esp-idf/components/bootloader/subproject"
-  "D:/Projekte/Projekte_2022/Anthracide/Anthracide/build/bootloader"
-  "D:/Projekte/Projekte_2022/Anthracide/Anthracide/build/bootloader-prefix"
-  "D:/Projekte/Projekte_2022/Anthracide/Anthracide/build/bootloader-prefix/tmp"
-  "D:/Projekte/Projekte_2022/Anthracide/Anthracide/build/bootloader-prefix/src/bootloader-stamp"
-  "D:/Projekte/Projekte_2022/Anthracide/Anthracide/build/bootloader-prefix/src"
-  "D:/Projekte/Projekte_2022/Anthracide/Anthracide/build/bootloader-prefix/src/bootloader-stamp"
+  "D:/Projekte/Projekte_2022/github/Anthracide/src/ESP32-S3/build/bootloader"
+  "D:/Projekte/Projekte_2022/github/Anthracide/src/ESP32-S3/build/bootloader-prefix"
+  "D:/Projekte/Projekte_2022/github/Anthracide/src/ESP32-S3/build/bootloader-prefix/tmp"
+  "D:/Projekte/Projekte_2022/github/Anthracide/src/ESP32-S3/build/bootloader-prefix/src/bootloader-stamp"
+  "D:/Projekte/Projekte_2022/github/Anthracide/src/ESP32-S3/build/bootloader-prefix/src"
+  "D:/Projekte/Projekte_2022/github/Anthracide/src/ESP32-S3/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "D:/Projekte/Projekte_2022/Anthracide/Anthracide/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "D:/Projekte/Projekte_2022/github/Anthracide/src/ESP32-S3/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
+if(cfgdir)
+  file(MAKE_DIRECTORY "D:/Projekte/Projekte_2022/github/Anthracide/src/ESP32-S3/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+endif()

@@ -1,21 +1,22 @@
 {
     "project_name":       "bootloader",
     "project_path":       "C:/Users/mailm/esp/esp-idf/components/bootloader/subproject",
-    "build_dir":          "D:/Projekte/Projekte_2022/Anthracide/Anthracide/build/bootloader",
-    "config_file":        "D:/Projekte/Projekte_2022/Anthracide/Anthracide/sdkconfig",
+    "build_dir":          "D:/Projekte/Projekte_2022/github/Anthracide/src/ESP32-S3/build/bootloader",
+    "config_file":        "D:/Projekte/Projekte_2022/github/Anthracide/src/ESP32-S3/sdkconfig",
     "config_defaults":    "",
     "app_elf":            "bootloader.elf",
     "app_bin":            "bootloader.bin",
-    "git_revision":       "v4.4.2",
+    "git_revision":       "v5.0-rc1-4-g919b3e621e",
     "target":             "esp32s3",
     "rev":                "",
     "phy_data_partition": "",
     "monitor_baud" :      "115200",
     "monitor_toolprefix": "xtensa-esp32s3-elf-",
     "config_environment" : {
-        "COMPONENT_KCONFIGS" : "C:/Users/mailm/esp/esp-idf/components/efuse/Kconfig;C:/Users/mailm/esp/esp-idf/components/esp32s3/Kconfig;C:/Users/mailm/esp/esp-idf/components/esp_common/Kconfig;C:/Users/mailm/esp/esp-idf/components/esp_hw_support/Kconfig;C:/Users/mailm/esp/esp-idf/components/esp_system/Kconfig;C:/Users/mailm/esp/esp-idf/components/freertos/Kconfig;C:/Users/mailm/esp/esp-idf/components/hal/Kconfig;C:/Users/mailm/esp/esp-idf/components/log/Kconfig;C:/Users/mailm/esp/esp-idf/components/newlib/Kconfig;C:/Users/mailm/esp/esp-idf/components/spi_flash/Kconfig",
-        "COMPONENT_KCONFIGS_PROJBUILD" : "C:/Users/mailm/esp/esp-idf/components/bootloader/Kconfig.projbuild;C:/Users/mailm/esp/esp-idf/components/esp_rom/Kconfig.projbuild;C:/Users/mailm/esp/esp-idf/components/esptool_py/Kconfig.projbuild;C:/Users/mailm/esp/esp-idf/components/partition_table/Kconfig.projbuild"
+        "COMPONENT_KCONFIGS" : "C:/Users/mailm/esp/esp-idf/components/efuse/Kconfig;C:/Users/mailm/esp/esp-idf/components/esp_common/Kconfig;C:/Users/mailm/esp/esp-idf/components/esp_hw_support/Kconfig;C:/Users/mailm/esp/esp-idf/components/esp_system/Kconfig;C:/Users/mailm/esp/esp-idf/components/freertos/Kconfig;C:/Users/mailm/esp/esp-idf/components/hal/Kconfig;C:/Users/mailm/esp/esp-idf/components/log/Kconfig;C:/Users/mailm/esp/esp-idf/components/newlib/Kconfig;C:/Users/mailm/esp/esp-idf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS_PROJBUILD" : "C:/Users/mailm/esp/esp-idf/components/bootloader/Kconfig.projbuild;C:/Users/mailm/esp/esp-idf/components/esp_app_format/Kconfig.projbuild;C:/Users/mailm/esp/esp-idf/components/esp_rom/Kconfig.projbuild;C:/Users/mailm/esp/esp-idf/components/esptool_py/Kconfig.projbuild;C:/Users/mailm/esp/esp-idf/components/partition_table/Kconfig.projbuild"
     },
-    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp32s3", "esp_common", "esp_hw_support", "esp_rom", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
-    "build_component_paths" : [ "C:/Users/mailm/esp/esp-idf/components/bootloader", "C:/Users/mailm/esp/esp-idf/components/bootloader_support", "C:/Users/mailm/esp/esp-idf/components/efuse", "C:/Users/mailm/esp/esp-idf/components/esp32s3", "C:/Users/mailm/esp/esp-idf/components/esp_common", "C:/Users/mailm/esp/esp-idf/components/esp_hw_support", "C:/Users/mailm/esp/esp-idf/components/esp_rom", "C:/Users/mailm/esp/esp-idf/components/esp_system", "C:/Users/mailm/esp/esp-idf/components/esptool_py", "C:/Users/mailm/esp/esp-idf/components/freertos", "C:/Users/mailm/esp/esp-idf/components/hal", "C:/Users/mailm/esp/esp-idf/components/log", "C:/Users/mailm/esp/esp-idf/components/bootloader/subproject/main", "C:/Users/mailm/esp/esp-idf/components/bootloader/subproject/components/micro-ecc", "C:/Users/mailm/esp/esp-idf/components/newlib", "C:/Users/mailm/esp/esp-idf/components/partition_table", "C:/Users/mailm/esp/esp-idf/components/soc", "C:/Users/mailm/esp/esp-idf/components/spi_flash", "C:/Users/mailm/esp/esp-idf/components/xtensa", "" ]
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp_app_format", "esp_common", "esp_hw_support", "esp_rom", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "C:/Users/mailm/esp/esp-idf/components/bootloader", "C:/Users/mailm/esp/esp-idf/components/bootloader_support", "C:/Users/mailm/esp/esp-idf/components/efuse", "C:/Users/mailm/esp/esp-idf/components/esp_app_format", "C:/Users/mailm/esp/esp-idf/components/esp_common", "C:/Users/mailm/esp/esp-idf/components/esp_hw_support", "C:/Users/mailm/esp/esp-idf/components/esp_rom", "C:/Users/mailm/esp/esp-idf/components/esp_system", "C:/Users/mailm/esp/esp-idf/components/esptool_py", "C:/Users/mailm/esp/esp-idf/components/freertos", "C:/Users/mailm/esp/esp-idf/components/hal", "C:/Users/mailm/esp/esp-idf/components/log", "C:/Users/mailm/esp/esp-idf/components/bootloader/subproject/main", "C:/Users/mailm/esp/esp-idf/components/bootloader/subproject/components/micro-ecc", "C:/Users/mailm/esp/esp-idf/components/newlib", "C:/Users/mailm/esp/esp-idf/components/partition_table", "C:/Users/mailm/esp/esp-idf/components/soc", "C:/Users/mailm/esp/esp-idf/components/spi_flash", "C:/Users/mailm/esp/esp-idf/components/xtensa", "" ],
+    "debug_prefix_map_gdbinit": ""
 }

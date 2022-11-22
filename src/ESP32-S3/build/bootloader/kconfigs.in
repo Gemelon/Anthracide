@@ -1,5 +1,4 @@
 source "C:/Users/mailm/esp/esp-idf/components/efuse/Kconfig"
-source "C:/Users/mailm/esp/esp-idf/components/esp32s3/Kconfig"
 source "C:/Users/mailm/esp/esp-idf/components/esp_common/Kconfig"
 source "C:/Users/mailm/esp/esp-idf/components/esp_hw_support/Kconfig"
 source "C:/Users/mailm/esp/esp-idf/components/esp_system/Kconfig"
